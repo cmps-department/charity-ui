@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-import './styles/index.scss';
+import "./styles/index.scss";
 
-import { Provider } from 'react-redux';
-import store from './store/store';
+import { AuthProvider } from "react-oidc-context";
+import { settings } from "./auth/settings";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { BrowserRouter } from "react-router-dom";
+
+import { Provider } from "react-redux";
+import store from "./store/store";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <AuthProvider {...settings}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

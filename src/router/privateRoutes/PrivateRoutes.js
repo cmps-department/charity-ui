@@ -1,9 +1,15 @@
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { useAuth } from "react-oidc-context";
 
 function PrivateRoutes() {
-    let auth = {'token': true}
+    const auth = useAuth();
+    
+    if (!auth.isAuthenticated) {
+        auth.signinRedirect()
+    }
+
     return (
-        auth.token ? <Outlet/> : <Navigate to="/backend-keycloak-auth"/>
+        auth.isAuthenticated ? <Outlet/> : null
     )
 }
 

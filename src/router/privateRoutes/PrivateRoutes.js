@@ -1,16 +1,17 @@
 import { Outlet } from "react-router-dom";
 import { useAuth } from "react-oidc-context";
+import { useEffect } from "react";
 
 function PrivateRoutes() {
-    const auth = useAuth();
-    
-    if (!auth.isAuthenticated) {
-        auth.signinRedirect()
-    }
+  const auth = useAuth();
 
-    return (
-        auth.isAuthenticated ? <Outlet/> : null
-    )
+  useEffect(() => {
+    if (!auth.isAuthenticated && !auth.isLoading) {
+      auth.signinRedirect({ redirect_uri: window.location.href });
+    }
+  }, [auth]);
+
+  return auth.isAuthenticated ? <Outlet /> : null;
 }
 
 export default PrivateRoutes;

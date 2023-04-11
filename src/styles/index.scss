@@ -1,6 +1,15 @@
-// Customization
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
- 
-//
-
-@import "bootstrap/scss/bootstrap";
+@layer base {
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #333333;
+        background-image: url('../images/background.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}

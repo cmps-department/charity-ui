@@ -1,16 +1,16 @@
-import { useAuth } from "react-oidc-context";
-import { Link } from "react-router-dom";
+import heart from "../images/heart.png";
 
 function HomePage() {
-    const auth = useAuth();
-
-    return (
-        <div>
-            Home Page
-            <button onClick={() => auth.signinRedirect()}>LOGIN</button>
-            <Link to="userProfile">Go to ProfilePage</Link>
-        </div>
-    )
+  return (
+    <main>
+      <div className="container px-6">
+        <h1 className="font-bold text-3xl">
+          <img src={heart} alt="Heart" className="inline-block mr-[15px]" />
+          Привіт, волонтере !
+        </h1>
+      </div>
+    </main>
+  );
 }
 
 export default HomePage;

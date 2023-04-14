@@ -7,11 +7,14 @@ import PostsPage from "./pages/PostsPage";
 import PostPage from "./pages/PostPage";
 import Page404 from "./pages/Page404";
 
+import Header from "./components/Header";
+
 import PrivateRoutes from "./router/privateRoutes/PrivateRoutes";
 
 function App() {
   return (
     <div>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/aboutUs" element={<AboutUsPage/>} />

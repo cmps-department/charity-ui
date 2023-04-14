@@ -6,8 +6,7 @@ import CustomNavLink from "./CustomNavLink";
 function Header() {
     const { isAuthenticated, signinRedirect } = useAuth();
 
-    const handleClick = (e) => {
-        e.preventDefault();
+    function login() {
         signinRedirect();
     }
 
@@ -21,13 +20,12 @@ function Header() {
           {isAuthenticated ? (
             <CustomNavLink label="Профіль" path="/userProfile" />
           ) : (
-            <a
-              href="#"
-              onClick={handleClick}
+            <button
+              onClick={login}
               className="font-bold uppercase"
             >
               Увійти
-            </a>
+            </button>
           )}
           <NavLink
             className="max-w-[300px] w-full font-bold uppercase bg-primary-100 text-center py-4 rounded-xl"

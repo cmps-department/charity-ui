@@ -1,263 +1,74 @@
 import heart from "../images/heart.png";
 import funnel from "../images/funnel.png";
-import dron from "../images/dron.png";
-import top from "../images/top.png";
-import done from "../images/done.png";
 import descending from "../images/descending.png";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { Container, Row, Col } from 'react-bootstrap';
-
-
-
+import Card from "../components/Card";
 
 function HomePage() {
   return (
-
     <main>
-      
       <div className="container px-6">
         <h1 className="font-bold text-3xl">
           <img src={heart} alt="Heart" className="inline-block mr-[15px]" />
-          Привіт, волонтере !
+          Привіт, волонтере!
         </h1>
+
+
         
 
-        <Container>
-      <Row>
-        <Col>
-          <Card style={{ width: '36rem' }}>
-            <Card.Img variant="top" src={top} className="rounded float-left" alt="..." style={{ borderRadius: '200px', width: '1000px', height: '300px' }} />
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '36rem' }}>
-            <Card.Img variant="top" src={done} className="rounded float-right" alt="..." style={{ borderRadius: '200px', width: '1000px', height: '300px' }} />
-          </Card>
-        </Col>
-       </Row>
-        </Container>
-        <br />
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-  <button style={{ display: 'flex', alignItems: 'center', marginRight: '12px' }}>
-    <img alt="Фільтр" src={funnel} className="w-5 h-5 mr-2" />
-    Фільтр
-  </button>
-  <button style={{ display: 'flex', alignItems: 'center' }}>
-    <img alt="Сортування" src={descending} className="w-5 h-5 mr-2" />
-    Сортування
-  </button>
-</div>
+        <div class="news-container">
+  <div class="newscard bg-gradient-to-b from-orange-300 to-orange-500 rounded-lg overflow-hidden shadow-lg ">
+    <img src={heart} alt="Image" />
+    <div class="p-4">
+      <h2 class="text-xl font-bold mb-2">Заголовок</h2>
+      <p class="text-gray-700 text-base">Текст</p>
+    </div>
   </div>
-  <br />
-  <Container>
-      <Row>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                  variant="primary"
-                  style={{
-                    backgroundColor: "#ffd700",
-                    width: "200px",
-                    color: 'black',
-                    marginTop: '10px',
-                    display: "block",
-                  }}
-                >
-                  Задонатити
-                </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-              variant="primary"
-              style={{
-                backgroundColor: "#ffd700",
-                width: "200px",
-                color: 'black',
-                marginTop: '10px',
-                display: "block",
-              }}
-                    >
-                      Задонатити
-                    </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                  variant="primary"
-                  style={{
-                    backgroundColor: "#ffd700",
-                    width: "200px",
-                    color: 'black',
-                    marginTop: '10px',
-                    display: "block",
-                  }}
-                >
-                  Задонатити
-                </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                variant="primary"
-                style={{
-                  backgroundColor: "#ffd700",
-                  width: "200px",
-                  color: 'black',
-                  marginTop: '10px',
-                  display: "block",
-                }}
-                      >
-                        Задонатити
-                      </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                variant="primary"
-                style={{
-                  backgroundColor: "#ffd700",
-                  width: "200px",
-                  color: 'black',
-                  marginTop: '10px',
-                  display: "block",
-                }}
-                  >
-                    Задонатити
-                  </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                variant="primary"
-                style={{
-                  backgroundColor: "#ffd700",
-                  width: "200px",
-                  color: 'black',
-                  marginTop: '10px',
-                  display: "block",
-                }}
->
-                  Задонатити
-                </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                variant="primary"
-                style={{
-                  backgroundColor: "#ffd700",
-                  width: "200px",
-                  color: 'black',
-                  marginTop: '10px',
-                  display: "block",
-                }}
->
-                Задонатити
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={dron} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-              Збір коштів на закупівлю розвідувальних дронів RQ-35 Heidrun
-              <br />
-              Кінцева сумма: 900 000₴
-              </Card.Text>
-              <Button
-                variant="primary"
-                style={{
-                  backgroundColor: "#ffd700",
-                  width: "200px",
-                  color: 'black',
-                  marginTop: '10px',
-                  display: "block",
-                }}
->
-                Задонатити
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
 
+  <div class="newscard bg-gradient-to-b from-green-300 to-green-500 rounded-lg overflow-hidden shadow-lg">
+    <img src={heart} alt="Image" />
+    <div class="p-4">
+      <h2 class="text-xl font-bold mb-2">Заголовок</h2>
+      <p class="text-gray-700 text-base">Текст</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+        <div class="flex space-x-4">
+          <button class="flex items-center space-x-2 py-2 px-4 rounded">
+            <img src={funnel} alt="funnel" className="inline-block w-5 h-5 mr-5px]" />
+            <span class="font-normal text-sm text-base">Фільтрувати</span>
+          </button>
+          <button class="flex items-center space-x-2 py-2 px-4 rounded">
+            <img src={descending} alt="descending" className="inline-block w-5 h-5 mr-[5px]" />
+            <span class="font-normal text-sm text-base">Сортувати</span>
+          </button>
+        </div>
+
+
+
+
+
+
+        <div className="card-container">
+          <div className="card-row">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+          <div className="card-row">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

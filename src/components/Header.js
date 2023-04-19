@@ -2,6 +2,9 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "react-oidc-context";
 import user from "../images/user.png";
 import logo from "../images/logo.png";
+import { Link } from 'react-router-dom';
+
+
 
 import CustomNavLink from "./CustomNavLink";
 
@@ -16,8 +19,9 @@ function Header() {
     <header className="bg-bg-100 mb-[60px]">
       <div className="container px-6 py-5">
         <nav className="flex justify-between items-center">
-        <CustomNavLink path="/posts">
-          <img src={logo} alt="Логотип" /></CustomNavLink>
+        <Link to="/">
+            <img src={logo} width={240} height={230} alt="logo" />
+          </Link>
           <CustomNavLink label="Оголошення" path="/posts" />
           <CustomNavLink label="Про нас" path="/aboutUs" />
           {isAuthenticated ? (
@@ -36,7 +40,7 @@ function Header() {
           </button>
           )}
           <NavLink
-            className="max-w-[300px] w-full font-bold uppercase bg-primary-100 text-center py-4 rounded-xl"
+            className="max-w-[300px] w-full font-semibold uppercase bg-primary-100 text-center py-4 rounded-xl"
             to="/createPost"
           >
             Створити оголошення

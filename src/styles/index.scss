@@ -11,6 +11,35 @@
         background-position: center center;
         background-repeat: no-repeat;
     }
-    
-   
+    .rounded-md {
+        border-radius: 5rem; 
+      }
+      .card-container {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .card-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .news-container {
+        display: inline-flex;
+        justify-content: space-between;
+        padding-right: 100px;
+      }
+      
+      .newscard {
+        width: 700px;
+        height: 300px;
+        margin-right: 80px;
+        
+      }
+      
+      .newscard img {
+        width: 33%;
+        height: auto;
+      }
+      
 }

@@ -17,14 +17,14 @@ function HomePage() {
 
         <div className="container mx-auto px-4">
         <div class="flex justify-between gap-x-4 px-10">
-          <div class="w-full  h-96 mx-4 md:mx-0 my-4 md:my-0 bg-gradient-to-b from-or-00 to-or-300 rounded-lg overflow-hidden shadow-lg flex">
+          <div class="w-full  h-96 mx-4 md:mx-0 my-4 md:my-0 bg-gradient-to-b from-or-00 to-or-300 rounded-lg overflow-hidden shadow-lg flex border accent-200">
             <img src={top} alt="Image" class="h-full object-cover" />
             <div class="p-4 flex flex-col justify-center mx-auto">
               <h2 class="text-xl font-bold mb-2">Заголовок</h2>
               <p class="text-gray-700 text-base">Текст</p>
             </div>
           </div>
-          <div class="w-full  h-96 mx-4 md:mx-0 my-4 md:my-0 bg-gradient-to-b from-gr-00 to-gr-300 rounded-lg overflow-hidden shadow-lg flex">
+          <div class="w-full  h-96 mx-4 md:mx-0 my-4 md:my-0 bg-gradient-to-b from-gr-00 to-gr-300 rounded-lg overflow-hidden shadow-lg flex border accent-200">
             <img src={done} alt="Image" class="h-full object-cover" />
             <div class="p-4 flex flex-col justify-center mx-auto">
               <h2 class="text-xl font-bold mb-2">Заголовок</h2>

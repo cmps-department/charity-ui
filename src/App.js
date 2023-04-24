@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 
 import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";

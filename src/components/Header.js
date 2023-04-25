@@ -16,13 +16,13 @@ function Header() {
     }
 
   return (
-    <header className="bg-bg-100 mb-[60px]">
+    <header className="bg-bg-100">
       <div className="container px-6 py-5">
         <nav className="flex justify-between items-center">
         <Link to="/">
             <img src={logo} width={240} height={230} alt="logo" />
           </Link>
-          <CustomNavLink label="Оголошення" path="/posts" />
+          <CustomNavLink label="Оголошення" path="/" />
           <CustomNavLink label="Про нас" path="/aboutUs" />
           {isAuthenticated ? (
             <CustomNavLink label="Профіль" path="/userProfile" />

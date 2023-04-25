@@ -7,7 +7,7 @@ import CardList from "../components/CardList";
 
 function HomePage() {
   return (
-    <main className="container mx-auto px-4">
+    <main className="container mx-auto my-15">
       <h1 className="font-bold text-3xl flex items-center">
         <img src={heart} alt="Heart" className="inline-block mr-3" />
         Привіт, волонтере!
@@ -30,11 +30,19 @@ function HomePage() {
       </div>
       <div className="flex justify-start items-center mt-12">
         <button className="space-x-2 py-2 px-4 rounded">
-          <img src={funnel} alt="funnel" className="inline-block w-5 h-5 mr-3" />
+          <img
+            src={funnel}
+            alt="funnel"
+            className="inline-block w-5 h-5 mr-3"
+          />
           <span className="font-normal text-sm text-base">Фільтрувати</span>
         </button>
         <button className="space-x-2 py-2 px-4 rounded">
-          <img src={descending} alt="descending" className="inline-block w-5 h-5 mr-3" />
+          <img
+            src={descending}
+            alt="descending"
+            className="inline-block w-5 h-5 mr-3"
+          />
           <span className="font-normal text-sm text-base">Сортувати</span>
         </button>
       </div>
@@ -44,4 +52,3 @@ function HomePage() {
 }
 
 export default HomePage;
-

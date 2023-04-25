@@ -8,6 +8,7 @@ import PostPage from "./pages/PostPage";
 import Page404 from "./pages/Page404";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import PrivateRoutes from "./router/privateRoutes/PrivateRoutes";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/posts/:id" element={<PostPage/>}/>
         <Route path="*" element={<Page404/>} />
       </Routes>
+      <Footer />
     </div>
   );
 }

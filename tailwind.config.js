@@ -16,6 +16,7 @@ module.exports = {
         "primary-400": "#ffffff",
         "accent-100": "#C0C0C0",
         "accent-200": "#626262",
+        "header": "rgba(232, 232, 232, 0.85)",
         "footer": "#917800",
         "bg-100": "#F7F7F7",
         "bg-200": "#ededed",

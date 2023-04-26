@@ -3,16 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-    html, body, #root {
-      height: 100%;
-    }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
 
-    body {
-        font-family: 'Open Sans', sans-serif;
-        color: #333333;
-        background-image: url('../images/background.png');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    } 
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }

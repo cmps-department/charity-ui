@@ -26,11 +26,11 @@ module.exports = {
         "gr-00": "#d0ffcf",
       },
       container: {
-        center: true,
-        maxWidth: '1280px'
+        center: true
       },
       maxWidth: {
-        "300": "300px"
+        "300": "300px",
+        "xl": "1280px"
       },
       margin: {
         "15": "60px",

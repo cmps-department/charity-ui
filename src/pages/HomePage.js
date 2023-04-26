@@ -7,7 +7,7 @@ import CardList from "../components/CardList";
 
 function HomePage() {
   return (
-    <main className="container mx-auto px-6 my-15 flex-auto">
+    <main className="container max-w-xl mx-auto my-15 px-4">
       <h1 className="font-bold text-3xl flex items-center">
         <img src={heart} alt="Heart" className="inline-block mr-3" />
         Привіт, волонтере!
@@ -28,7 +28,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div className="flex justify-start items-center mt-12"> 
+      <div className="flex justify-start items-center mt-12">
         <button className="space-x-2 py-2 px-4 rounded">
           <img
             src={funnel}

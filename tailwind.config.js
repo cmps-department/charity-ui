@@ -34,6 +34,12 @@ module.exports = {
       },
       margin: {
         "15": "60px",
+      },
+      borderWidth: {
+        "3": "3px"
+      },
+      outlineWidth: {
+        "3": "3px"
       }
     },
   },

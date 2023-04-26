@@ -1,5 +1,8 @@
-import React from "react";
+import Button from "./Button";
+
 import dron from "../images/dron.png";
+
+
 
 const Card = () => {
   return (
@@ -14,7 +17,7 @@ const Card = () => {
       <p className="mb-0 font-normal text-100 inline-block mr-[15px]">Кінцева сума:</p>
       <p className="mb-0 font-normal text-100 text-2xl inline-block font-semibold">1 000 000₴</p>
     </div>
-    <button className="max-w-[300px] w-full font-semibold uppercase bg-primary-100 text-center py-4 rounded-xl block">Задонатити</button>
+    <Button>Задонатити</Button>
   </div>
 </div>
 

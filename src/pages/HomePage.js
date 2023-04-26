@@ -13,15 +13,15 @@ function HomePage() {
         Привіт, волонтере!
       </h1>
       <div className="flex justify-between gap-x-4 mt-8">
-        <div className="w-full bg-gradient-to-b from-orange-500 to-orange-300 rounded-xl flex border accent-200 p-6">
-          <img src={welfare} alt="welfare"/>
+        <div className="w-full bg-gradient-to-br from-or-300 from-0% to-or-500 to-100% rounded-3xl flex border border-accent-100 p-6">
+          <img src={welfare} alt="welfare" />
           <div className="p-4 flex flex-col justify-center mx-auto">
             <h2 className="text-xl font-bold mb-2">Заголовок</h2>
             <p className="text-gray-700 text-base">Текст</p>
           </div>
         </div>
-        <div className="w-full bg-gradient-to-b from-green-500 to-green-300 rounded-xl flex border accent-200 p-6">
-          <img src={verified} alt="verified"/>
+        <div className="w-full bg-gradient-to-br from-gr-300 from-0% to-gr-500 to-100% rounded-3xl flex border border-accent-100 p-6">
+          <img src={verified} alt="verified" />
           <div className="p-4 flex flex-col justify-center mx-auto">
             <h2 className="text-xl font-bold mb-2">Заголовок</h2>
             <p className="text-gray-700 text-base">Текст</p>

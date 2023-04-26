@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    html, body, #root {
+      height: 100%;
+    }
+
     body {
         font-family: 'Open Sans', sans-serif;
         color: #333333;
@@ -10,19 +14,5 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-    }
-    .rounded-md {
-        border-radius: 5rem; 
-      }
-      .card-container {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .card-row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      
+    } 
 }

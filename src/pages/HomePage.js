@@ -7,7 +7,7 @@ import CardList from "../components/CardList";
 
 function HomePage() {
   return (
-    <main className="container mx-auto my-15">
+    <main className="container mx-auto my-15 flex-auto">
       <h1 className="font-bold text-3xl flex items-center">
         <img src={heart} alt="Heart" className="inline-block mr-3" />
         Привіт, волонтере!

@@ -14,7 +14,7 @@ import PrivateRoutes from "./router/privateRoutes/PrivateRoutes";
 
 function App() {
   return (
-    <div>
+    <div className="min-h-full flex flex-col">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage/>} />

@@ -2,7 +2,7 @@
 
 function AboutUsPage() {
     return (
-        <div>
+        <div className="flex-auto">
             About Us
         </div>
     )

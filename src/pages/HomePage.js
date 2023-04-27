@@ -1,17 +1,17 @@
 import heart from "../images/heart.png";
+
 import funnel from "../images/funnel.png";
 import descending from "../images/descending.png";
 import welfare from "../images/welfare.png";
 import verified from "../images/verified.png";
+
 import CardList from "../components/CardList";
+import Title from "../components/Title";
 
 function HomePage() {
   return (
     <main className="container max-w-xl mx-auto my-15 px-4">
-      <h1 className="font-bold text-3xl flex items-center ml-[-60px]">
-        <img src={heart} alt="Heart" className="inline-block mr-3" />
-        Привіт, волонтере!
-      </h1>
+      <Title imageUrl={heart} alt="heart" title="Привіт, волонтере!"/>
       <div className="flex justify-between gap-x-4 mt-8">
         <div className="w-full bg-gradient-to-br from-or-300 from-0% to-or-500 to-100% rounded-3xl flex border border-accent-100 p-6">
           <img src={welfare} alt="welfare" />

@@ -4,8 +4,8 @@ import { useAuth } from "react-oidc-context";
 import { Link } from "react-router-dom";
 
 import user from "../images/user.png";
-import logo from "../images/logo.png";
-import logoHover from "../images/logo-hover.png";
+import logo from "../images/logo/logo.png";
+import logoHover from "../images/logo/logo-hover.png";
 
 import CustomNavLink from "./CustomNavLink";
 import Button from "./Button";

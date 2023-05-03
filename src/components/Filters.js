@@ -6,7 +6,7 @@ function Filters() {
     <div className="flex items-center gap-x-5">
       <div>
         <button className="space-x-2 rounded hover:text-primary-300">
-          <span className="font-normal text-sm text-base">Фільтрувати</span>
+          <span className="font-normal text-base">Фільтрувати</span>
           <img
             src={funnel}
             alt="funnel"
@@ -17,7 +17,7 @@ function Filters() {
 
       <div>
         <button className="space-x-2 rounded hover:text-primary-300">
-          <span className="font-normal text-sm text-base">Сортувати</span>
+          <span className="font-normal text-base">Сортувати</span>
           <img
             src={descending}
             alt="descending"

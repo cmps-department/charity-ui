@@ -22,14 +22,14 @@ const Card = () => {
           "Повернись живим"
         </h5>
 
-        <p className="mb-3 font-normal text-100 mb-8">
+        <p className="font-normal text-100 mb-8">
           {"Триває збір коштів на закупівлю дронів для Збройних Сил України".slice(0, 60) + "..."}
         </p>
         <div className="text-center mb-3 flex justify-between items-center">
           <p className="font-normal text-100">
             Кінцева сума:
           </p>
-          <p className="font-normal text-100 text-2xl font-semibold">
+          <p className="text-100 text-2xl font-semibold">
             1 000 000₴
           </p>
         </div>

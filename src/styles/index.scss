@@ -1,28 +1,22 @@
+@import "@fontsource/open-sans";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    body {
-        font-family: 'Open Sans', sans-serif;
-        color: #333333;
-        background-image: url('../images/background.png');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-    .rounded-md {
-        border-radius: 5rem; 
-      }
-      .card-container {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .card-row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }

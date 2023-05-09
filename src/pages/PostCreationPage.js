@@ -1,6 +1,7 @@
 import Title from "../components/Title";
 import Uploader from "../components/Uploader";
 import FormData from "../components/FormData";
+import ImageDnd from "../components/ImageDnd";
 
 import hand from "../images/title/hand.png";
 
@@ -10,6 +11,7 @@ function PostCreationPage() {
       <Title imageUrl={hand} title="Створити оголошення" />
       <form action="">
         <Uploader />
+        <ImageDnd />
         <FormData />
       </form>
     </main>

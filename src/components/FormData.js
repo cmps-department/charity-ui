@@ -32,9 +32,19 @@ function FormData() {
         id="description"
         name="description"
         placeholder="Опишіть на що Ви збираєте гроші..."
-        className="block w-full border border-input rounded-3xl p-5.5 h-80 min-h-[350px]"
+        className="block w-full border border-input rounded-3xl p-5.5 mb-3 h-80 min-h-[350px] max-h-[500px]"
         required
+        minLength={90}
+        maxLength={9000}
       />
+      <div className="flex justify-between">
+        <span>
+          {description.length < 90
+            ? `Напишіть ще ${90 - description.length} символів`
+            : null}
+        </span>
+        <span>{`${description.length}/9000`}</span>
+      </div>
       <h2 className="font-bold text-xl mb-5 mt-7">Дані*</h2>
       <input
         value={finalAmount}
@@ -75,7 +85,7 @@ function FormData() {
         id="donationCards"
         name="donationCards"
         placeholder="Напишіть ще варіанти, куди можна задонатити"
-        className="block border border-input rounded-3xl p-5.5 mb-7 w-5/12 h-80 min-h-[350px]"
+        className="block border border-input rounded-3xl p-5.5 mb-7 w-5/12 h-80 min-h-[350px] max-h-[500px]"
       />
       <p className="my-5">Контакти</p>
       <input
@@ -100,13 +110,14 @@ function FormData() {
       />
       <div className="flex">
         <button
+          type="submit"
           className="w-5/12 box-border ease-in duration-200 
                 font-semibold uppercase 
                 bg-primary-100 text-center py-3 rounded-3xl border-3 border-primary-100 hover:bg-transparent mr-12"
         >
           Опублікувати
         </button>
-        <p className="w-right-section flex gap-3.5">
+        <div className="w-right-section flex gap-3.5">
           <p className="min-w-[30px] flex flex-col justify-center">
             <img
               src={info}
@@ -119,7 +130,7 @@ function FormData() {
             модерацію. Це може зайняти деякий час, після чого ви отримаєте
             повідомлення про успіх.
           </p>
-        </p>
+        </div>
       </div>
     </>
   );

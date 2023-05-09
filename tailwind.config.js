@@ -25,6 +25,7 @@ module.exports = {
         "or-500": "rgba(255, 241, 167, 0.85)",
         "gr-300": "#D8FFD8",
         "gr-500": "#B4FFB3",
+        "input": "#333333"
       },
       container: {
         center: true
@@ -36,11 +37,17 @@ module.exports = {
       margin: {
         "15": "60px",
       },
+      padding: {
+        "5.5": "22px"
+      },
       borderWidth: {
         "3": "3px"
       },
       outlineWidth: {
         "3": "3px"
+      },
+      width: {
+        "right-section": "calc(58.333333% - 48px)"
       }
     },
   },

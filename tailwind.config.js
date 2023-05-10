@@ -25,7 +25,8 @@ module.exports = {
         "or-500": "rgba(255, 241, 167, 0.85)",
         "gr-300": "#D8FFD8",
         "gr-500": "#B4FFB3",
-        "input": "#333333"
+        "input": "#333333",
+        "blur": "rgba(247, 247, 247, 0.8)"
       },
       container: {
         center: true

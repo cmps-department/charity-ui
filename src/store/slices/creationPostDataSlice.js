@@ -29,8 +29,13 @@ const creationPostData = createSlice({
     },
     deleteImage: (state, action) => {
       state.imageList = state.imageList.filter(
-        (file) => file !== action.payload
+        (file) => file.id !== action.payload
       );
+    },
+    changeImagePosition: (state, action) => {
+      const { source, destination } = action.payload;
+      const temp = state.imageList.splice(source.index, 1)[0];
+      state.imageList.splice(destination.index, 0, temp);
     },
     setDiscription: (state, action) => {
       state.description = action.payload;
@@ -59,6 +64,7 @@ export const {
   setCategory,
   addImage,
   deleteImage,
+  changeImagePosition,
   setDiscription,
   setFinalAmount,
   setDonationLink,

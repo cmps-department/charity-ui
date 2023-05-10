@@ -21,9 +21,9 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path="/aboutUs" element={<AboutUsPage/>} />
         <Route element={<PrivateRoutes/>}>
-          <Route path="/userProfile" element={<ProfilePage/>}/>
+          <Route path="/userProfile" element={<ProfilePage />} />
+          <Route path="/createPost" element={<PostCreationPage/>} />
         </Route>
-        <Route path="/createPost" element={<PostCreationPage/>} />
         <Route path="/posts" element={<PostsPage/>} />
         <Route path="/posts/:id" element={<PostPage/>}/>
         <Route path="*" element={<Page404/>} />

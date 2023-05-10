@@ -5,19 +5,17 @@ import {
   setFinalAmount,
   setDonationLink,
   setDonationCards,
-  setEmail,
   setPhone,
-} from "../store/slices/creationPostDataSlice";
+} from "../store/slices/postCreationSlice";
 
 import info from "../images/info.png";
 
-function FormData() {
+function PostForm() {
   const {
     description,
     finalAmount,
     donationLink,
     donationCards,
-    email,
     phone,
   } = useSelector((state) => state.postData);
 
@@ -89,16 +87,6 @@ function FormData() {
       />
       <p className="my-5">Контакти</p>
       <input
-        value={email}
-        onChange={(e) => dispatch(setEmail(e.target.value))}
-        id="email"
-        name="email"
-        type="email"
-        placeholder="Email-адреса"
-        className="block px-5 py-2.5 mb-5 appearance-none border border-input rounded-3xl w-5/12"
-        required
-      />
-      <input
         value={phone}
         onChange={(e) => dispatch(setPhone(e.target.value))}
         id="phone"
@@ -136,4 +124,4 @@ function FormData() {
   );
 }
 
-export default FormData;
+export default PostForm;

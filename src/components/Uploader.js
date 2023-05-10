@@ -1,11 +1,12 @@
 import { useRef, useState} from "react";
 import { useDispatch } from 'react-redux'
 
-import { addFile } from "../store/slices/creationPostDataSlice";
 import useImageUploader from "../hooks/useImageUploader";
 
 import gallery from "../images/gallery.png";
 import galleryHover from "../images/gallery-hover.png";
+import border from "../images/border.svg";
+import borderHover from '../images/border-hover.svg';
 
 function Uploader() {
   const [hovered, setHovered] = useState(false);
@@ -13,12 +14,8 @@ function Uploader() {
 
   const dispatch = useDispatch();
 
+  // Don't forget to finish loading and error handling
   const [uploadImages, loading, error] = useImageUploader();
-
-  // Variable is used to create dashed border with large line spacing, please don't change !
-  const _formBorder = `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='${
-    hovered ? "%23917800FF" : "%23333"
-  }' stroke-width='4' stroke-dasharray='24%2c 28' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`;
 
   function handleHover() {
     setHovered((prevState) => !prevState);
@@ -52,7 +49,7 @@ function Uploader() {
       <label
         className="flex flex-col justify-center items-center rounded-3xl cursor-pointer py-[200px] border"
         style={{
-          backgroundImage: _formBorder,
+          backgroundImage: hovered ? `url(${borderHover})` : `url(${border})`,
         }}
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
@@ -78,7 +75,7 @@ function Uploader() {
             alt="upload"
           />
           <p className={hovered ? "text-primary-300" : ""}>
-            Виберіть або перетащіть сюди фото
+            Виберіть або перетягніть сюди фото
           </p>
         </div>
       </label>

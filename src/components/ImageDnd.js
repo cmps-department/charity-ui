@@ -5,7 +5,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import {
   changeImagePosition,
   deleteImage,
-} from "../store/slices/creationPostDataSlice";
+} from "../store/slices/postCreationSlice";
 
 import useStrictDroppable from "../hooks/useStrictDroppable";
 import car from "../images/car.png";

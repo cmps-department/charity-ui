@@ -17,8 +17,8 @@ const initialState = {
   phone: "",
 };
 
-const creationPostData = createSlice({
-  name: "postData",
+const postCreationSlice = createSlice({
+  name: "postCreation",
   initialState,
   reducers: {
     setCategory: (state, action) => {
@@ -58,7 +58,7 @@ const creationPostData = createSlice({
   },
 });
 
-const { actions, reducer } = creationPostData;
+const { actions, reducer } = postCreationSlice;
 
 export const {
   setCategory,

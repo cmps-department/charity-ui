@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import postData from './slices/creationPostDataSlice';
+import postData from './slices/postCreationSlice';
 
 const store = configureStore({
   reducer: { postData },

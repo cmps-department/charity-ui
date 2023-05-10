@@ -24,7 +24,7 @@ function Header() {
   }
 
   return (
-    <header className="bg-header backdrop-blur-md sticky top-0 left-0">
+    <header className="bg-header backdrop-blur-md sticky top-0 left-0 z-20">
       <div className="container max-w-xl px-4 py-5">
         <nav className="flex justify-between items-center">
           <Link to="/" onMouseEnter={handleHover} onMouseLeave={handleHover}>

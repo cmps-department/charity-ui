@@ -1,13 +1,19 @@
-import axios from "axios"
-
-const _baseUrl = 'https://backend/uploadImages';
-
+import axios from "axios";
+import { useAuth } from 'react-oidc-context';
 
 export const uploadImagesInstance = axios.create({
-    baseURL: _baseUrl,
-    timeout: 5000,
+    baseURL: `${process.env.REACT_APP_BASE_URL}/images`,
+    timeout: 120000,
     headers: {
-        "Authorization": `Bearer access_token`,
         "Content-Type": "multipart/form-data",
     }
+});
+
+uploadImagesInstance.interceptors.request.use((config) => {
+    const { user } = useAuth();
+    if (user && user.access_token) {
+        config.headers.Authorization = `Bearer ${user.access_token}`;
+    }
+
+    return config;
 })

@@ -1,6 +1,6 @@
 import Title from "../components/Title";
 import Uploader from "../components/Uploader";
-import FormData from "../components/FormData";
+import PostForm from "../components/PostForm";
 import ImageDnd from "../components/ImageDnd";
 
 import hand from "../images/title/hand.png";
@@ -12,7 +12,7 @@ function PostCreationPage() {
       <form action="">
         <Uploader />
         <ImageDnd />
-        <FormData />
+        <PostForm />
       </form>
     </main>
   );

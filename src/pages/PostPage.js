@@ -19,17 +19,19 @@ const PostsPage = () => {
         <div className="w-1/2 mx-15">
         <div className="flex items-center gap-x-5">
           <Button>Задонатити</Button>
-          <Mark><img  class="mx-auto" src={mark} alt="mark" style={{ width: '30px', height: '30px' }} /></Mark>
+          <Mark><img className="mx-auto" src={mark} alt="mark" style={{ width: '30px', height: '30px' }} /></Mark>
         </div>
           <h2 className="text-xl font-bold mb-4 mt-4">Володимир Андрєєв</h2>
-          <p className="text-gray-700 text-base">Відкриваємо збір на 5 пікапів для ССО, щоб хлопці ще вправніше та мобільніше нищили ворога </p>
+          <p className="text-gray-700 text-base">
+            Відкриваємо збір на 5 пікапів для ССО, щоб хлопці ще вправніше та мобільніше нищили ворога
+          </p>
           <h2 className="text-xl font-bold mb-4 mt-4">Реквізити та контакти</h2>
           <h2 className="text-gray-700 text-base">Банка: 5375411205288033</h2> 
           <h2 className="text-gray-700 text-base">Приват: 5363542603051781 </h2>
           <h2 className="text-gray-700 text-base mb-10">PayPal: volodymyr.andreev@gmail.com</h2>
           <h2 className="text-gray-700 text-base">Пошта: volodymyr.andreev@gmail.com</h2>
           <h2 className="text-gray-700 text-base mb-10">Телефон: +380 50 45 78 091</h2>
-          <div className="text-center mb-3 flex justify-between items-center mb-10">
+          <div className="text-center flex justify-between items-center mb-10">
             <p className="font-normal text-100">
               Кінцева сума:
             </p>
@@ -37,7 +39,7 @@ const PostsPage = () => {
               1 000 000₴
             </p>
           </div>
-          <div className="text-center mb-3 flex justify-between items-center mb-10">
+          <div className="text-center flex justify-between items-center mb-10">
             <p className="font-normal text-100">
               Дата публікації:
             </p>
@@ -45,7 +47,7 @@ const PostsPage = () => {
               29.04.2023
             </p>
           </div>
-          <div className="text-center mb-3 flex justify-between items-center mb-10">
+          <div className="text-center flex justify-between items-center mb-10">
             <p className="font-normal text-100">
               Категорія:
             </p>

@@ -19,7 +19,9 @@ function HomePage() {
           </div>
           <div className="w-6/12 p-4 flex flex-col justify-center mx-auto">
             <h2 className="text-xl font-bold mb-4">Допомогати - круто</h2>
-            <p className="text-gray-700 text-base">Навіть 1 гривня може в купі зібрати мільйон. Не обезцінюй свій вклад!</p>
+            <p className="text-gray-700 text-base">
+              Навіть 1 гривня може в купі зібрати мільйон. Не обезцінюй свій вклад!
+            </p>
           </div>
         </div>
         <div className="w-full bg-gradient-to-br from-gr-300 from-0% to-gr-500
@@ -29,7 +31,9 @@ function HomePage() {
           </div>
           <div className="w-7/12 p-4 flex flex-col justify-center mx-auto">
             <h2 className="text-xl font-bold mb-4">Лише перевірені оголошення</h2>
-            <p className="text-gray-700 text-base">Ми власноруч перевіряємо кожне оголошення на правдивість, тим самим забезпечуємо Вам безпечний донат!</p>
+            <p className="text-gray-700 text-base">
+              Ми власноруч перевіряємо кожне оголошення на правдивість, тим самим забезпечуємо Вам безпечний донат!
+            </p>
           </div>
         </div>
       </div>

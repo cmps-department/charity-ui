@@ -1,8 +1,8 @@
-import Button from "./Button";
-
 import car from "../images/car.png";
+import { Link } from "react-router-dom";
 
 const Card = () => {
+  const item = { id: 1 };
   return (
     <div className="max-w-[300px] bg-primary-400 border accent-200 rounded-3xl p-5 
                     outline outline-3 outline-transparent outline-offset-[-3px]
@@ -33,7 +33,20 @@ const Card = () => {
             1 000 000₴
           </p>
         </div>
-        <Button>Задонатити</Button>
+        <div>
+          {/* Replacing the button with a link */}
+          <div>
+            <Link
+              to={`/posts/${item.id}`}
+              className="max-w-[300px] block box-border ease-in duration-200 
+                          font-semibold uppercase 
+                          bg-primary-100 text-center py-3 rounded-xl border-3 border-primary-100 hover:bg-transparent"
+              style={{ fontSize: "12px" }}
+            >
+              Задонатити
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

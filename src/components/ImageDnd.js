@@ -92,9 +92,9 @@ function ImageDnd() {
                           onClick={() => handleClick(item.id)}
                         />
                         <div
-                          className={`${
-                            hiddenImageId === item.id ? "block" : "hidden"
-                          } absolute top-0 left-0 w-full h-full rounded-3xl bg-blur backdrop-blur-md z-10 flex justify-center items-center`}
+                          className={`${hiddenImageId === item.id ? "block" : "hidden"}
+                          absolute top-0 left-0 w-full h-full rounded-3xl bg-blur 
+                          backdrop-blur-md z-10 flex justify-center items-center`}
                           onClick={() => handleClick(item.id)}
                         >
                           <button

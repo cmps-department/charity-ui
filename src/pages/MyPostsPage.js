@@ -1,5 +1,4 @@
 import noticeboard from "../images/title/noticeboard.png";
-
 import plus from "../images/title/plus.png";
 import Title from "../components/Title";
 import MyCardList from "../components/MyCardList";
@@ -7,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function MyPostsPage() {
   return (
-    <main className="container max-w-xl mx-auto my-15 px-4 flex flex-wrap justify-between gap-[15px] mt-8">
+    <>
       <Title imageUrl={noticeboard} alt="heart" title="Мої оголошення"/>
       <MyCardList />
       <Link
@@ -21,7 +20,7 @@ function MyPostsPage() {
       <img src={plus} alt="plus"  />
     </Link>
     
-    </main>
+    </>
   );
 }
 

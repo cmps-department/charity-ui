@@ -1,46 +1,36 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
-import AboutUsPage from "./pages/AboutUsPage";
-import ProfilePage from "./pages/ProfilePage";
-import PostCreationPage from "./pages/PostCreationPage";
-import PostsPage from "./pages/PostsPage";
-import PostPage from "./pages/PostPage";
-import Page404 from "./pages/Page404";
-import FavoritesPage from "./pages/FavoritesPage";
-import MyPostsPage from "./pages/MyPostsPage";
-import MessagesPage from "./pages/MessagesPage";
-
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-
-
-
-
 import PrivateRoutes from "./router/privateRoutes/PrivateRoutes";
+import Layout from "./router/Layout/Layout";
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
+const ProfilePage = lazy(() => import('./pages/ProfilePage'));
+const PostCreationPage = lazy(() => import('./pages/PostCreationPage'));
+const PostPage = lazy(() => import('./pages/PostPage'));
+const Page404 = lazy(() => import('./pages/Page404'));
+const MessagesPage = lazy(() => import('./pages/MessagesPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage'));
+const MyPostsPage = lazy(() => import('./pages/MyPostsPage'));
 
 function App() {
   return (
-    <div className="min-h-full flex flex-col">
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/aboutUs" element={<AboutUsPage/>} />
-        <Route path="/messages" element={<MessagesPage/>} />
-        
-        <Route element={<PrivateRoutes/>}>
-          <Route path="/userProfile" element={<ProfilePage />} />
-          <Route path="/createPost" element={<PostCreationPage/>} />
-          <Route path="/favorites" element={<FavoritesPage/>} />
-          <Route path="/myPosts" element={<MyPostsPage/>} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="aboutUs" element={<AboutUsPage />} />
+        <Route path="messages" element={<MessagesPage />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="userProfile" element={<ProfilePage />} />
+          <Route path="createPost" element={<PostCreationPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="myPosts" element={<MyPostsPage />} />
         </Route>
-        <Route path="/posts" element={<PostsPage/>} />
-        <Route path="/posts/:id" element={<PostPage/>}/>
-        <Route path="*" element={<Page404/>} />
-      </Routes>
-      <Footer />
-    </div>
+        <Route path="posts/:id" element={<PostPage />} />
+        <Route path="*" element={<Page404 />} />
+      </Route>
+    </Routes>
   );
 }
 

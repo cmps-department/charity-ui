@@ -4,7 +4,6 @@ import Issue from "./Issue";
 import Warning from "./Warning";
 import Views from "./Views";
 
-
 function MessagesList() {
   return (
     <div className="flex flex-wrap justify-between gap-[15px] mt-8">
@@ -13,15 +12,8 @@ function MessagesList() {
       <Issue/>
       <Warning/>
       <Views/>
-      
-
     </div>
   );
 }
 
 export default MessagesList;
-
-
-
-
-

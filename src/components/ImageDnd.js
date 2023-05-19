@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Image from "./Image";
 
 import {
   changeImagePosition,
@@ -8,7 +9,6 @@ import {
 } from "../store/slices/postCreationSlice";
 
 import useStrictDroppable from "../hooks/useStrictDroppable";
-import car from "../images/car.png";
 import trash from "../images/trash.png";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
@@ -32,6 +32,7 @@ const getListStyle = () => ({
 
 function ImageDnd() {
   const { imageList } = useSelector((state) => state.postData);
+  console.log(imageList);
   const [hiddenImageId, setHiddenImageId] = useState(null);
 
   const [enabled] = useStrictDroppable();
@@ -71,8 +72,8 @@ function ImageDnd() {
               >
                 {imageList.map((item, index) => (
                   <Draggable
-                    key={item.id}
-                    draggableId={item.id.toString()}
+                    key={item}
+                    draggableId={index.toString()}
                     index={index}
                   >
                     {(provided, snapshot) => (
@@ -85,21 +86,24 @@ function ImageDnd() {
                           provided.draggableProps.style
                         )}
                       >
-                        <img
+                        <Image
                           className="w-full h-auto object-contain rounded-3xl"
-                          src={car}
-                          alt={item.alt}
-                          onClick={() => handleClick(item.id)}
+                          size={{width: 260, height: 180}}
+                          src={`http://localhost:8090/images/${item}`}
+                          alt="application image"
+                          onClick={() => handleClick(item)}
                         />
                         <div
-                          className={`${hiddenImageId === item.id ? "block" : "hidden"}
+                          className={`${
+                            hiddenImageId === item ? "block" : "hidden"
+                          }
                           absolute top-0 left-0 w-full h-full rounded-3xl bg-blur 
                           backdrop-blur-md z-10 flex justify-center items-center`}
-                          onClick={() => handleClick(item.id)}
+                          onClick={() => handleClick(item)}
                         >
                           <button
                             className="bg-white p-3.5 rounded-full drop-shadow-md"
-                            onClick={(e) => handleDeleteImage(e, item.id)}
+                            onClick={(e) => handleDeleteImage(e, item)}
                           >
                             <img src={trash} alt="delete" />
                           </button>

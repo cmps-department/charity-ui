@@ -1,14 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const imagesFromBackend = [
-  { id: 1, src: "../images/car1.png", alt: "car" },
-  { id: 2, src: "../images/car2.png", alt: "car" },
-  { id: 3, src: "../images/car3.png", alt: "car" },
-];
-
 const initialState = {
   category: "",
-  imageList: imagesFromBackend,
+  imageList: [],
   description: "",
   finalAmount: "",
   donationLink: "",

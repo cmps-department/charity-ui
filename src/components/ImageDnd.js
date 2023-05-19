@@ -89,7 +89,7 @@ function ImageDnd() {
                         <Image
                           className="w-full h-auto object-contain rounded-3xl"
                           size={{width: 260, height: 180}}
-                          src={`http://localhost:8090/images/${item}`}
+                          imageId={item}
                           alt="application image"
                           onClick={() => handleClick(item)}
                         />

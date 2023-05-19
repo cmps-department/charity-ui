@@ -23,7 +23,7 @@ const postCreationSlice = createSlice({
     },
     deleteImage: (state, action) => {
       state.imageList = state.imageList.filter(
-        (file) => file.id !== action.payload
+        (file) => file !== action.payload
       );
     },
     changeImagePosition: (state, action) => {

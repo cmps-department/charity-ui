@@ -28,6 +28,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 const getListStyle = () => ({
   display: "flex",
   flexWrap: "wrap",
+  alignItems: "flex-start"
 });
 
 function ImageDnd() {
@@ -70,10 +71,12 @@ function ImageDnd() {
                 style={getListStyle()}
                 {...provided.droppableProps}
               >
-                {imageList.map((item, index) => (
+                {imageList.map((imageId, index) => {
+                  console.log(imageId, index);
+                  return (
                   <Draggable
-                    key={item}
-                    draggableId={index.toString()}
+                    key={imageId}
+                    draggableId={imageId}
                     index={index}
                   >
                     {(provided, snapshot) => (
@@ -89,21 +92,21 @@ function ImageDnd() {
                         <Image
                           className="w-full h-auto object-contain rounded-3xl"
                           size={{width: 260, height: 180}}
-                          imageId={item}
+                          imageId={imageId}
                           alt="application image"
-                          onClick={() => handleClick(item)}
+                          onClick={() => handleClick(imageId)}
                         />
                         <div
                           className={`${
-                            hiddenImageId === item ? "block" : "hidden"
+                            hiddenImageId === imageId ? "block" : "hidden"
                           }
                           absolute top-0 left-0 w-full h-full rounded-3xl bg-blur 
                           backdrop-blur-md z-10 flex justify-center items-center`}
-                          onClick={() => handleClick(item)}
+                          onClick={() => handleClick(imageId)}
                         >
                           <button
                             className="bg-white p-3.5 rounded-full drop-shadow-md"
-                            onClick={(e) => handleDeleteImage(e, item)}
+                            onClick={(e) => handleDeleteImage(e, imageId)}
                           >
                             <img src={trash} alt="delete" />
                           </button>
@@ -111,7 +114,8 @@ function ImageDnd() {
                       </div>
                     )}
                   </Draggable>
-                ))}
+                  )
+                })}
                 {provided.placeholder}
               </div>
             )}

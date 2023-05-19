@@ -39,7 +39,7 @@ function AboutUsPage() {
           <img
             src={handheart}
             alt="handheart"
-            style={{ width: "350px", height: "300px" }}
+            style={{ width: "300px", height: "250px" }}
           />
         </div>
         <div className="my-4 w-full bg-bg-400 rounded-3xl flex p-6">

@@ -6,7 +6,6 @@ function ProfilePage() {
   return (
     <div>
       ProfilePage
-      <p>token: { user.access_token }</p>
     </div>
   )
 }

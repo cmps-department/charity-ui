@@ -1,34 +1,40 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addImage } from "../store/slices/postCreationSlice";
+import { useAuth } from "react-oidc-context";
 
-import { uploadImagesInstance } from "../axios";
+import { apiInstance } from "../axios";
 
 function useImageUploader() {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const { user } = useAuth();
 
-    async function uploadImages(files) {
-        try {
-            setLoading(true);
-            const formData = new FormData();
-            for (let i = 0; i < files.length; i++) {
-                formData.append("images", files[i]);
-            }
-            console.log(formData.getAll("images"));
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-            const response = await uploadImagesInstance.post(
-                "/images",
-                formData
-            )
+  function uploadImages(files) {
+    setLoading(true);
 
-            return response.data;
-        } catch (e) {
-            setError(true);
-        } finally {
-            setLoading(false);
-        }
+    const formData = new FormData();
+    for (let i = 0; i < files.length; i++) {
+      formData.append("images", files[i]);
     }
 
-    return [uploadImages, loading, error];
+    apiInstance.post("/images", formData, {
+      headers: {
+        "Authorization": `Bearer ${user.access_token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    }).then(response => {
+      dispatch(addImage(response.data))
+    }).catch(e => {
+      setError(true)
+    }).finally(() => {
+      setLoading(false)
+    })
+  }
+
+  return [uploadImages, loading, error];
 }
 
 export default useImageUploader;

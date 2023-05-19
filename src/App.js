@@ -23,9 +23,9 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="userProfile" element={<ProfilePage />} />
           <Route path="createPost" element={<PostCreationPage />} />
-          <Route path="/favorites" element={<FavoritesPage/>} />
-          <Route path="/myPosts" element={<MyPostsPage/>} />
-          <Route path="/messages" element={<MessagesPage/>} />
+          <Route path="favorites" element={<FavoritesPage/>} />
+          <Route path="myPosts" element={<MyPostsPage/>} />
+          <Route path="messages" element={<MessagesPage/>} />
         </Route>
         <Route path="posts/:id" element={<PostPage />} />
         <Route path="*" element={<Page404 />} />

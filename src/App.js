@@ -1,35 +1,30 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
-import AboutUsPage from "./pages/AboutUsPage";
-import ProfilePage from "./pages/ProfilePage";
-import PostCreationPage from "./pages/PostCreationPage";
-import PostsPage from "./pages/PostsPage";
-import PostPage from "./pages/PostPage";
-import Page404 from "./pages/Page404";
-
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
 import PrivateRoutes from "./router/privateRoutes/PrivateRoutes";
+import Layout from "./router/Layout/Layout";
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
+const ProfilePage = lazy(() => import('./pages/ProfilePage'));
+const PostCreationPage = lazy(() => import('./pages/PostCreationPage'));
+const PostPage = lazy(() => import('./pages/PostPage'));
+const Page404 = lazy(() => import('./pages/Page404'));
 
 function App() {
   return (
-    <div className="min-h-full flex flex-col">
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/aboutUs" element={<AboutUsPage/>} />
-        <Route element={<PrivateRoutes/>}>
-          <Route path="/userProfile" element={<ProfilePage />} />
-          <Route path="/createPost" element={<PostCreationPage/>} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="aboutUs" element={<AboutUsPage />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="userProfile" element={<ProfilePage />} />
+          <Route path="createPost" element={<PostCreationPage />} />
         </Route>
-        <Route path="/posts" element={<PostsPage/>} />
-        <Route path="/posts/:id" element={<PostPage/>}/>
-        <Route path="*" element={<Page404/>} />
-      </Routes>
-      <Footer />
-    </div>
+        <Route path="posts/:id" element={<PostPage />} />
+        <Route path="*" element={<Page404 />} />
+      </Route>
+    </Routes>
   );
 }
 

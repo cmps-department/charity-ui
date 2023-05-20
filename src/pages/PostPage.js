@@ -59,7 +59,6 @@ const PostsPage = () => {
           </div>
         </div>
       </div>
-
       <Filters />
       <CardList />
     </>

@@ -1,12 +1,12 @@
-import people from "../images/title/people.png";
-import flag from "../images/title/flag.png";
-import team from "../images/title/team.png";
-import work from "../images/title/work.png";
-import leaders from "../images/title/leaders.png";
-import handheart from "../images/title/handheart.png";
-import front from "../images/title/front.png";
-import back from "../images/title/back.png";
-import designers from "../images/title/designers.png";
+import people from "../images/aboutUs/people.png";
+import flag from "../images/aboutUs/flag.png";
+import team from "../images/aboutUs/team.png";
+import work from "../images/aboutUs/work.png";
+import leaders from "../images/aboutUs/leaders.png";
+import handheart from "../images/aboutUs/handheart.png";
+import front from "../images/aboutUs/front.png";
+import back from "../images/aboutUs/back.png";
+import designers from "../images/aboutUs/designers.png";
 import Title from "../components/Title";
 
 function AboutUsPage() {
@@ -39,7 +39,7 @@ function AboutUsPage() {
           <img
             src={handheart}
             alt="handheart"
-            style={{ width: "350px", height: "300px" }}
+            style={{ width: "300px", height: "250px" }}
           />
         </div>
         <div className="my-4 w-full bg-bg-400 rounded-3xl flex p-6">

@@ -10,6 +10,9 @@ const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const PostCreationPage = lazy(() => import('./pages/PostCreationPage'));
 const PostPage = lazy(() => import('./pages/PostPage'));
 const Page404 = lazy(() => import('./pages/Page404'));
+const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
+const MyPostsPage = lazy(() => import("./pages/MyPostsPage"));
+const MessagesPage = lazy(() => import("./pages/MessagesPage"));
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="userProfile" element={<ProfilePage />} />
           <Route path="createPost" element={<PostCreationPage />} />
+          <Route path="favorites" element={<FavoritesPage/>} />
+          <Route path="myPosts" element={<MyPostsPage/>} />
+          <Route path="messages" element={<MessagesPage/>} />
         </Route>
         <Route path="posts/:id" element={<PostPage />} />
         <Route path="*" element={<Page404 />} />

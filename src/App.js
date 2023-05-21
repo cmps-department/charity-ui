@@ -6,7 +6,6 @@ import Layout from "./router/Layout/Layout";
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
-const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const PostCreationPage = lazy(() => import('./pages/PostCreationPage'));
 const PostPage = lazy(() => import('./pages/PostPage'));
 const Page404 = lazy(() => import('./pages/Page404'));
@@ -21,7 +20,6 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="userProfile" element={<ProfilePage />} />
           <Route path="createPost" element={<PostCreationPage />} />
           <Route path="favorites" element={<FavoritesPage/>} />
           <Route path="myPosts" element={<MyPostsPage/>} />

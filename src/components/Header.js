@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "react-oidc-context";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { toggleVisibility } from "../store/slices/profileVisibilitySlice";
 
 import user from "../images/user.png";
 import logo from "../images/logo/logo.png";
@@ -14,6 +16,7 @@ function Header() {
   const [hovered, setHovered] = useState(false);
   const { isAuthenticated, signinRedirect } = useAuth();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function handleHover() {
     setHovered((prevState) => !prevState);
@@ -24,7 +27,7 @@ function Header() {
   }
 
   return (
-    <header className="bg-header backdrop-blur-md sticky top-0 left-0 z-20">
+    <header className="w-full bg-header backdrop-blur-md fixed top-0 left-0 z-20">
       <div className="container max-w-xl px-4 py-5">
         <nav className="flex justify-between items-center">
           <Link to="/" onMouseEnter={handleHover} onMouseLeave={handleHover}>
@@ -37,15 +40,17 @@ function Header() {
           <CustomNavLink label="Оголошення" path="/" />
           <CustomNavLink label="Про нас" path="/aboutUs" />
           {isAuthenticated ? (
-            <CustomNavLink label="Профіль" path="/userProfile" />
-          ) : (
             <button
-              onClick={login}
+              onClick={() => dispatch(toggleVisibility())}
               className="font-bold uppercase flex items-center hover:text-primary-300"
             >
               Профіль
               <img alt="Профіль" src={user} className="w-6 h-6 ml-2" />
             </button>
+          ) : (
+              <button className="font-bold uppercase hover:text-primary-300" onClick={login}>
+                Увійти
+              </button>
           )}
           <Button onClick={() => navigate("/createPost")}>
             Створити оголошення

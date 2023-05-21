@@ -7,19 +7,18 @@ import { Link } from "react-router-dom";
 function MyPostsPage() {
   return (
     <>
-      <Title imageUrl={noticeboard} alt="heart" title="Мої оголошення"/>
+      <Title imageUrl={noticeboard} alt="heart" title="Мої оголошення" />
       <MyCardList />
       <Link
-      to={`/createPost`}
-      className="max-w-[300px] bg-primary-400 border accent-200 rounded-3xl p-5 
+        to={`/createPost`}
+        className="max-w-[300px] bg-primary-400 border accent-200 rounded-3xl p-5 
                  outline outline-3 outline-transparent outline-offset-[-3px]
                  hover:outline-primary-100 ease-in duration-200 cursor-pointer 
                  flex flex-col justify-center items-center"
-      style={{ width: "300px", height: "400px", fontSize: "100px" }}
-    >
-      <img src={plus} alt="plus"  />
-    </Link>
-    
+        style={{ width: "300px", height: "400px", fontSize: "100px" }}
+      >
+        <img src={plus} alt="plus" />
+      </Link>
     </>
   );
 }

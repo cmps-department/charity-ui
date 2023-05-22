@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  category: "",
-  imageList: [],
+  category: "ARMY",
+  images: [],
   description: "",
-  finalAmount: "",
-  donationLink: "",
-  donationCards: "",
-  email: "",
+  targetAmount: "",
+  fullDescription: "",
+  shortDescription: "",
   phone: "",
 };
 
@@ -19,17 +18,17 @@ const postCreationSlice = createSlice({
       state.category = action.payload;
     },
     addImage: (state, action) => {
-      state.imageList = state.imageList.concat(action.payload);
+      state.images = state.images.concat(action.payload);
     },
     deleteImage: (state, action) => {
-      state.imageList = state.imageList.filter(
+      state.images = state.images.filter(
         (file) => file !== action.payload
       );
     },
     changeImagePosition: (state, action) => {
       const { source, destination } = action.payload;
-      const temp = state.imageList.splice(source.index, 1)[0];
-      state.imageList.splice(destination.index, 0, temp);
+      const temp = state.images.splice(source.index, 1)[0];
+      state.images.splice(destination.index, 0, temp);
     },
     setDiscription: (state, action) => {
       state.description = action.payload;
@@ -42,9 +41,6 @@ const postCreationSlice = createSlice({
     },
     setDonationCards: (state, action) => {
       state.donationCards = action.payload;
-    },
-    setEmail: (state, action) => {
-      state.email = action.payload;
     },
     setPhone: (state, action) => {
       state.phone = action.payload;
@@ -63,7 +59,6 @@ export const {
   setFinalAmount,
   setDonationLink,
   setDonationCards,
-  setEmail,
   setPhone,
 } = actions;
 

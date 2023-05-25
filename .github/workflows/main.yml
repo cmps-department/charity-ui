@@ -30,3 +30,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           image-name: charity-ui
           image-tag: latest
+      - name: Setup SSH
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1.3.5
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-host: donation.pp.ua
+      - name: Pull image
+        run: ssh ubuntu@donation.pp.ua docker compose pull
+      - name: Start image
+        run: ssh ubuntu@donation.pp.ua docker compose up -d

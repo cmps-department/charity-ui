@@ -10,7 +10,7 @@ import Filters from "../components/Filters";
 function HomePage() {
   return (
     <>
-      <Title imageUrl={heart} alt="heart" title="Привіт, волонтере!!!" />
+      <Title imageUrl={heart} alt="heart" title="Привіт, волонтере!" />
       <div className="flex justify-between gap-x-4 mb-10">
         <div
           className="w-full bg-gradient-to-br from-or-300 from-0% to-or-500

@@ -1,5 +1,4 @@
 import { useRef, useState} from "react";
-import { useDispatch } from 'react-redux'
 
 import useImageUploader from "../hooks/useImageUploader";
 

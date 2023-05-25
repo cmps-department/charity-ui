@@ -12,10 +12,8 @@ function Uploader() {
   const [hovered, setHovered] = useState(false);
   const inputRef = useRef(null);
 
-  const dispatch = useDispatch();
-
   // Don't forget to finish loading and error handling
-  const [uploadImages, loading, error] = useImageUploader();
+  const [uploadImages] = useImageUploader();
 
   function handleHover() {
     setHovered((prevState) => !prevState);

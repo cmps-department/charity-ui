@@ -5,7 +5,8 @@ import { apiInstance } from "../axios";
 
 function useSendApplication() {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(true);
+  const [succesful, setSuccesful] = useState(false);
+  const [error, setError] = useState(false);
 
   const { user } = useAuth();
 
@@ -17,12 +18,12 @@ function useSendApplication() {
           Authorization: `Bearer ${user.access_token}`,
         },
       })
-      .then((response) => console.log(response))
+      .then(() => setSuccesful(true))
       .catch(() => setError(true))
       .finally(() => setLoading(false));
     }
     
-    return [loading, error, sendApplication];
+    return [loading, succesful, error, sendApplication];
 }
 
 export default useSendApplication;

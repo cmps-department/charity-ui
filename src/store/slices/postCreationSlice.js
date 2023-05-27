@@ -6,7 +6,7 @@ const initialState = {
   images: [],
   fullDescription: "",
   shortDescription: "",
-  donateLink: "",
+  donationLink: "",
   phoneNumber: "",
 };
 
@@ -31,13 +31,13 @@ const postCreationSlice = createSlice({
       state.images.splice(destination.index, 0, temp);
     },
     setDescription: (state, action) => {
-      state.description = action.payload;
+      state.fullDescription = action.payload;
     },
     setTargetAmount: (state, action) => {
-      state.finalAmount = action.payload;
+      state.targetAmount = action.payload;
     },
     setDonationLink: (state, action) => {
-      state.donateLink = action.payload;
+      state.donationLink = action.payload;
     },
     setDonationCards: (state, action) => {
       state.shortDescription = action.payload;
@@ -45,6 +45,9 @@ const postCreationSlice = createSlice({
     setPhone: (state, action) => {
       state.phoneNumber = action.payload;
     },
+    clearFormData: (state) => {
+      state = initialState;
+    }
   },
 });
 
@@ -60,6 +63,7 @@ export const {
   setDonationLink,
   setDonationCards,
   setPhone,
+  clearFormData
 } = actions;
 
 export default reducer;

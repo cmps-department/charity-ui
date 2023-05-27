@@ -15,7 +15,7 @@ function PostForm() {
     fullDescription,
     shortDescription,
     targetAmount,
-    donateLink,
+    donationLink,
     phoneNumber,
   } = useSelector((state) => state.postData);
 
@@ -62,7 +62,7 @@ function PostForm() {
         className="flex justify-between gap-x-12 mb-5"
       >
         <input
-          value={donateLink}
+          value={donationLink}
           onChange={(e) => dispatch(setDonationLink(e.target.value))}
           id="donationLink"
           name="donationLink"

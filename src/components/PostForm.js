@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import {
-  setDiscription,
-  setFinalAmount,
+  setDescription,
+  setTargetAmount,
   setDonationLink,
   setDonationCards,
   setPhone,
@@ -12,11 +12,11 @@ import info from "../images/info.png";
 
 function PostForm() {
   const {
-    description,
-    finalAmount,
-    donationLink,
-    donationCards,
-    phone,
+    fullDescription,
+    shortDescription,
+    targetAmount,
+    donateLink,
+    phoneNumber,
   } = useSelector((state) => state.postData);
 
   const dispatch = useDispatch();
@@ -25,8 +25,8 @@ function PostForm() {
     <>
       <h2 className="font-bold text-xl mb-5 mt-7">Опис*</h2>
       <textarea
-        value={description}
-        onChange={(e) => dispatch(setDiscription(e.target.value))}
+        value={fullDescription}
+        onChange={(e) => dispatch(setDescription(e.target.value))}
         id="description"
         name="description"
         placeholder="Опишіть на що Ви збираєте гроші..."
@@ -37,16 +37,16 @@ function PostForm() {
       />
       <div className="flex justify-between">
         <span>
-          {description.length < 90
-            ? `Напишіть ще ${90 - description.length} символів`
+          {fullDescription.length < 90
+            ? `Напишіть ще ${90 - fullDescription.length} символів`
             : null}
         </span>
-        <span>{`${description.length}/9000`}</span>
+        <span>{`${fullDescription.length}/9000`}</span>
       </div>
       <h2 className="font-bold text-xl mb-5 mt-7">Дані*</h2>
       <input
-        value={finalAmount}
-        onChange={(e) => dispatch(setFinalAmount(parseInt(e.target.value)))}
+        value={targetAmount}
+        onChange={(e) => dispatch(setTargetAmount(parseInt(e.target.value)))}
         id="finalAmount"
         name="finalAmount"
         type="number"
@@ -62,7 +62,7 @@ function PostForm() {
         className="flex justify-between gap-x-12 mb-5"
       >
         <input
-          value={donationLink}
+          value={donateLink}
           onChange={(e) => dispatch(setDonationLink(e.target.value))}
           id="donationLink"
           name="donationLink"
@@ -78,7 +78,7 @@ function PostForm() {
         </p>
       </label>
       <textarea
-        value={donationCards}
+        value={shortDescription}
         onChange={(e) => dispatch(setDonationCards(e.target.value))}
         id="donationCards"
         name="donationCards"
@@ -87,7 +87,7 @@ function PostForm() {
       />
       <p className="my-5">Контакти</p>
       <input
-        value={phone}
+        value={phoneNumber}
         onChange={(e) => dispatch(setPhone(e.target.value))}
         id="phone"
         name="phone"

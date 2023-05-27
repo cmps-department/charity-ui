@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   category: "ARMY",
-  images: [],
-  description: "",
   targetAmount: "",
+  images: [],
   fullDescription: "",
   shortDescription: "",
-  phone: "",
+  donateLink: "",
+  phoneNumber: "",
 };
 
 const postCreationSlice = createSlice({
@@ -30,20 +30,20 @@ const postCreationSlice = createSlice({
       const temp = state.images.splice(source.index, 1)[0];
       state.images.splice(destination.index, 0, temp);
     },
-    setDiscription: (state, action) => {
+    setDescription: (state, action) => {
       state.description = action.payload;
     },
-    setFinalAmount: (state, action) => {
+    setTargetAmount: (state, action) => {
       state.finalAmount = action.payload;
     },
     setDonationLink: (state, action) => {
-      state.donationLink = action.payload;
+      state.donateLink = action.payload;
     },
     setDonationCards: (state, action) => {
-      state.donationCards = action.payload;
+      state.shortDescription = action.payload;
     },
     setPhone: (state, action) => {
-      state.phone = action.payload;
+      state.phoneNumber = action.payload;
     },
   },
 });
@@ -55,8 +55,8 @@ export const {
   addImage,
   deleteImage,
   changeImagePosition,
-  setDiscription,
-  setFinalAmount,
+  setDescription,
+  setTargetAmount,
   setDonationLink,
   setDonationCards,
   setPhone,

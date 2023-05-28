@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  category: "ARMY",
+  category: "",
   targetAmount: "",
   images: [],
   fullDescription: "",
@@ -45,9 +45,7 @@ const postCreationSlice = createSlice({
     setPhone: (state, action) => {
       state.phoneNumber = action.payload;
     },
-    clearFormData: (state) => {
-      state = initialState;
-    }
+    clearFormData: () => initialState
   },
 });
 

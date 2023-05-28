@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import Title from "../components/Title";
+import Filters from "../components/Filters";
 import Uploader from "../components/Uploader";
 import PostForm from "../components/PostForm";
 import ImageDnd from "../components/ImageDnd";
@@ -8,7 +9,7 @@ import ImageDnd from "../components/ImageDnd";
 import hand from "../images/title/hand.png";
 
 import useSendApplication from "../hooks/useSendApplication";
-import { clearFormData } from "../store/slices/postCreationSlice";
+import { clearFormData, setCategory } from "../store/slices/postCreationSlice";
 
 import Spinner from "../components/Spinner";
 import SuccesfulCreation from "../components/SuccesfulCreation";
@@ -26,10 +27,16 @@ function PostCreationPage() {
     dispatch(clearFormData());
   }
 
+  function handleChange(filter) {
+    dispatch(setCategory(filter.value))
+  }
+
   return (
     <>
       <Title imageUrl={hand} title="Створити оголошення" />
       <form onSubmit={(e) => handleSubmit(e)}>
+        <h2 className="font-bold text-xl mb-5 mt-7">Категорія*</h2>
+        <Filters placeholder="Категорія" handleChange={handleChange} />
         <Uploader />
         <ImageDnd />
         <PostForm />

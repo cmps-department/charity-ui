@@ -42,7 +42,7 @@ function Uploader() {
 
   return (
     <>
-      <h2 className="font-bold text-xl mb-5">Фото</h2>
+      <h2 className="font-bold text-xl my-5">Фото</h2>
       <label
         className="flex flex-col justify-center items-center rounded-3xl cursor-pointer py-[200px] border"
         style={{

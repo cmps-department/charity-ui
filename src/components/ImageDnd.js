@@ -32,7 +32,7 @@ const getListStyle = () => ({
 });
 
 function ImageDnd() {
-  const { imageList } = useSelector((state) => state.postData);
+  const { images } = useSelector((state) => state.postData);
   const [hiddenImageId, setHiddenImageId] = useState(null);
 
   const [enabled] = useStrictDroppable();
@@ -70,7 +70,7 @@ function ImageDnd() {
                 style={getListStyle()}
                 {...provided.droppableProps}
               >
-                {imageList.map((imageId, index) => (
+                {images.map((imageId, index) => (
                   <Draggable
                     key={imageId}
                     draggableId={imageId}

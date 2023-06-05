@@ -20,8 +20,9 @@ export const user = new UserManager(settings);
 export async function getToken() {
   const userInfo = await user.getUser();
   if (userInfo) {
+    console.log(userInfo)
     return userInfo.access_token;
   } else {
-    return "";
+    return null;
   }
 }

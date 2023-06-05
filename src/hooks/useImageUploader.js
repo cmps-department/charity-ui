@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addImage } from "../store/slices/postCreationSlice";
+import { addImage } from "../store/slices/applicationCreationSlice";
 import { useAuth } from "react-oidc-context";
 
 import { apiInstance } from "../axios";

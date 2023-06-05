@@ -1,13 +1,13 @@
 import favorites from "../images/title/favorites.png";
 
 import Title from "../components/Title";
-import CardList from "../components/CardList";
+import Applications from "../components/Applications";
 
 function FavoritesPage() {
   return (
     <>
       <Title imageUrl={favorites} alt="heart" title="Обране"/>
-      <CardList />
+      <Applications />
     </>
   );
 }

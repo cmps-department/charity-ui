@@ -1,10 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import postData from './slices/postCreationSlice';
-import profileVisibility from './slices/profileVisibilitySlice';
+import applicationData from "./slices/applicationCreationSlice";
+import profileVisibility from "./slices/profileVisibilitySlice";
+import { ApplicationApi } from "./api/ApplicationApi";
 
 const store = configureStore({
-  reducer: { postData, profileVisibility },
+  reducer: {
+    applicationData,
+    profileVisibility,
+    [ApplicationApi.reducerPath]: ApplicationApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(ApplicationApi.middleware),
   devTools: process.env.NODE_ENV !== "production",
 });
 

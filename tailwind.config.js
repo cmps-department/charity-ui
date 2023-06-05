@@ -29,7 +29,9 @@ module.exports = {
         "input": "#333333",
         "blur": "rgba(247, 247, 247, 0.8)",
         "succesful": "#41A910",
-        "error": "#EB3223"
+        "error": "#EB3223",
+        "approve": "#41A910",
+        "reject": "#EB3223"
       },
       container: {
         center: true

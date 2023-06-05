@@ -6,7 +6,7 @@ import Image from "./Image";
 import {
   changeImagePosition,
   deleteImage,
-} from "../store/slices/postCreationSlice";
+} from "../store/slices/applicationCreationSlice";
 
 import useStrictDroppable from "../hooks/useStrictDroppable";
 import trash from "../images/trash.png";
@@ -32,7 +32,7 @@ const getListStyle = () => ({
 });
 
 function ImageDnd() {
-  const { images } = useSelector((state) => state.postData);
+  const { images } = useSelector((state) => state.applicationData);
   const [hiddenImageId, setHiddenImageId] = useState(null);
 
   const [enabled] = useStrictDroppable();

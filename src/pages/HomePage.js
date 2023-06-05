@@ -4,7 +4,7 @@ import welfare from "../images/welfare.png";
 import verified from "../images/verified.png";
 
 import Title from "../components/Title";
-import CardList from "../components/CardList";
+import Applications from "../components/Applications";
 import Filters from "../components/Filters";
 
 function HomePage() {
@@ -46,7 +46,7 @@ function HomePage() {
         </div>
       </div>
       <Filters />
-      <CardList />
+      <Applications />
     </>
   );
 }

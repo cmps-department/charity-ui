@@ -1,18 +1,29 @@
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import { useUpdatePostMutation } from "../store/api/ApplicationApi";
+import useUserInfo from "../hooks/useUserInfo";
 
 import Image from "./Image";
 
 const Application = ({ application }) => {
-  const { id, fullDescription, targetAmount, images, status } = application;
-  const [ updatePost ] = useUpdatePostMutation();
+  const { id, authorId, fullDescription, targetAmount, donationLink, images, status } = application;
+  const [updatePost] = useUpdatePostMutation();
+  const user = useUserInfo(authorId);
+  const navigate = useNavigate();
 
   function handleUpdate(newStatus) {
-    const data = JSON.parse(JSON.stringify(application))
-    data.status = newStatus
-    console.log(data);
+    const data = JSON.parse(JSON.stringify(application));
+    data.status = newStatus;
     updatePost(data);
+  }
+
+  function handleNavigate(e) {
+    const tagName = e.target.tagName;
+    if (tagName === "A" || tagName === "BUTTON") return;
+    if (status === "APPROVED") {
+      navigate(`/applications/${id}`);
+    } else if (status === "PENDING") {
+      navigate(`/moderatedApplications/${id}`);
+    }
   }
 
   return (
@@ -20,6 +31,7 @@ const Application = ({ application }) => {
       className="max-w-[300px] bg-primary-400 border accent-200 rounded-3xl p-5 
                     outline outline-3 outline-transparent outline-offset-[-3px]
                     hover:outline-primary-100 ease-in duration-200 cursor-pointer"
+      onClick={handleNavigate}
     >
       <div className="w-[256px] h-[256px] mb-[30px] overflow-hidden rounded-xl">
         <Image
@@ -32,7 +44,7 @@ const Application = ({ application }) => {
 
       <div>
         <h5 className="max-w-[300px] font-bold uppercase text-xl mb-4">
-          "Повернись живим"
+          {`${user?.firstName} ${user?.lastName}`}
         </h5>
 
         <p className="font-normal text-100 mb-8">
@@ -47,21 +59,32 @@ const Application = ({ application }) => {
         <div>
           {status === "APPROVED" ? (
             <div>
-              <Link
-                to={`/posts/${id}`}
+              <a
+                href={donationLink}
+                rel="noreferrer"
+                target="_blank"
                 className="max-w-[300px] block box-border ease-in duration-200 
                           font-semibold uppercase 
                           bg-primary-100 text-center py-3 rounded-xl border-3 border-primary-100 hover:bg-transparent"
-                style={{ fontSize: "12px" }}
               >
                 Задонатити
-              </Link>
+              </a>
             </div>
           ) : null}
           {status === "PENDING" ? (
             <div className="flex justify-between font-bold mb-1">
-              <button onClick={() => handleUpdate("REJECTED")} className="text-reject">Відхилити</button>
-              <button onClick={() => handleUpdate("APPROVED")} className="text-approve">Схвалити</button>
+              <button
+                onClick={() => handleUpdate("REJECTED")}
+                className="text-reject"
+              >
+                Відхилити
+              </button>
+              <button
+                onClick={() => handleUpdate("APPROVED")}
+                className="text-approve"
+              >
+                Схвалити
+              </button>
             </div>
           ) : null}
         </div>

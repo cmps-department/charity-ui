@@ -11,10 +11,10 @@ const ApplicationCreationPage = lazy(() => import('./pages/ApplicationCreationPa
 const ApplicationPage = lazy(() => import('./pages/ApplicationPage'));
 const Page404 = lazy(() => import('./pages/Page404'));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
-const MyApplicationPage = lazy(() => import("./pages/MyApplicationPage"));
+const MyApplicationsPage = lazy(() => import("./pages/MyApplicationsPage"));
 const MessagesPage = lazy(() => import("./pages/MessagesPage"));
-
 const ModeratedApplicationsPage = lazy(() => import("./pages/ModeratedApplicationsPage"));
+const ModeratedApplicationPage = lazy(() => import("./pages/ModeratedApplicationPage"));
 
 function App() {
   return (
@@ -23,15 +23,16 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="createPost" element={<ApplicationCreationPage />} />
+          <Route path="createApplication" element={<ApplicationCreationPage />} />
           <Route path="favorites" element={<FavoritesPage/>} />
-          <Route path="myPosts" element={<MyApplicationPage/>} />
+          <Route path="myApplications" element={<MyApplicationsPage/>} />
           <Route path="messages" element={<MessagesPage/>} />
         </Route>
         <Route element={<AdminRoutes />}>
-          <Route path="applicationModeration" element={<ModeratedApplicationsPage/>} />
+          <Route path="moderatedApplications" element={<ModeratedApplicationsPage />} />
+          <Route path="moderatedApplications/:id" element={<ModeratedApplicationPage/>} />
         </Route>
-        <Route path="posts/:id" element={<ApplicationPage />} />
+        <Route path="applications/:id" element={<ApplicationPage />} />
         <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>

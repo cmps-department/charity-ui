@@ -67,3 +67,17 @@ export const filters = [
     src: INTORG,
   },
 ];
+
+export function findFilter(value) {
+  if (value) {
+    const filter = filters.find(filter => value === filter.value);
+    return (
+      <>
+        <img className="inline-block mr-3" src={filter.src} alt={filter.value} />
+        <span>{filter.label}</span>
+      </>
+    )
+  } else {
+    return null
+  }
+}

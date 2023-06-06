@@ -29,7 +29,7 @@ function Profile() {
         <div className="bg-primary-100 rounded-xl py-6 px-8 flex text-primary-300 mb-5">
           {isAdmin ? (
             <Link
-              to="applicationModeration"
+              to="moderatedApplications"
               className="flex items-center mr-8"
             >
               <span className="inline-block mr-8">Оголошень на розгляд:</span>
@@ -71,10 +71,10 @@ function Profile() {
               Обране
             </NavLink>
           )}
-          {isAdmin ? <NavLink to="applicationModeration" className="hover:text-primary-300">
+          {isAdmin ? <NavLink to="moderatedApplications" className="hover:text-primary-300">
               Оголошення на розгляді
             </NavLink> : (
-            <NavLink to="myPosts" className="hover:text-primary-300">
+            <NavLink to="myApplications" className="hover:text-primary-300">
               Мої оголошення
             </NavLink>
           )}

@@ -4,7 +4,7 @@ function CustomNavLink({ label, path }) {
   return (
     <NavLink
       className={({ isActive }) =>
-        "font-bold uppercase hover:text-primary-300 " + (isActive ? "text-primary-300" : "")
+        "font-extrabold uppercase hover:text-primary-300 " + (isActive ? "text-primary-300" : "")
       }
       to={path}
     >

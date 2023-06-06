@@ -1,14 +1,10 @@
-import { useAuth } from "react-oidc-context";
 import { useGetPostsQuery } from "../store/api/ApplicationApi";
-import jwtDecode from "jwt-decode";
 
 import Application from "./Application";
 import Spinner from './Spinner';
 
 function Applications({ status = "APPROVED" }) {
   const { data, isLoading, isError, isSuccess } = useGetPostsQuery(status);
-  console.log(status);
-  console.log(data);
   
   function renderApplications() {
     return data.map((application) => (

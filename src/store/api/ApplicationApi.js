@@ -4,6 +4,7 @@ import { getToken } from '../../auth/settings';
 
 export const ApplicationApi = createApi({
   reducerPath: 'ApplicationApi',
+  tagTypes: ['Applications'],
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.REACT_APP_BASE_URL,
     prepareHeaders: async (headers) => {
@@ -16,6 +17,13 @@ export const ApplicationApi = createApi({
   endpoints: (builder) => ({
     getPosts: builder.query({
       query: (status = "APPROVED") => `/applications?status=${status}`,
+       providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: 'Applications', id })),
+              { type: 'Applications', id: 'LIST' },
+            ]
+          : [{ type: 'Applications', id: 'LIST' }],
     }),
     getPostById: builder.query({
       query: (id) => `/applications/${id}`,
@@ -25,7 +33,8 @@ export const ApplicationApi = createApi({
         url: '/applications',
         method: 'POST',
         body,
-      })
+      }),
+      invalidatesTags: [{type: 'Applications', id: 'LIST'}]
     }),
     updatePost: builder.mutation({
       query: (body) => ({
@@ -33,12 +42,14 @@ export const ApplicationApi = createApi({
         method: 'PUT',
         body: body,
       }),
+      invalidatesTags: [{type: 'Applications', id: 'LIST'}]
     }),
     deletePost: builder.mutation({
       query: (id) => ({
         url: `/applications/${id}`,
         method: 'DELETE',
       }),
+      invalidatesTags: [{type: 'Applications', id: 'LIST'}]
     }),
   }),
 });

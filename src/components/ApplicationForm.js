@@ -30,7 +30,7 @@ function ApplicationForm() {
         id="description"
         name="description"
         placeholder="Опишіть на що Ви збираєте гроші..."
-        className="block w-full border border-input rounded-3xl p-5.5 mb-3 h-80 min-h-[350px] max-h-[500px]"
+        className="block w-full border border-input rounded-3xl p-5.5 mb-3 h-80 min-h-[350px] max-h-[500px] focus:outline-primary-300 focus:border-none"
         required
         minLength={90}
         maxLength={9000}
@@ -51,7 +51,7 @@ function ApplicationForm() {
         name="finalAmount"
         type="number"
         placeholder="Потрібна сума"
-        className="px-5 py-2.5 appearance-none border border-input rounded-3xl mr-3.5"
+        className="px-5 py-2.5 appearance-none border border-input rounded-3xl mr-3.5 focus:outline-primary-300 focus:border-none"
         required
         min={0}
       />
@@ -68,7 +68,7 @@ function ApplicationForm() {
           name="donationLink"
           type="url"
           placeholder="Швидке посилання"
-          className="px-5 py-2.5 appearance-none border border-input rounded-3xl w-5/12"
+          className="px-5 py-2.5 appearance-none border border-input rounded-3xl w-5/12 focus:outline-primary-300 focus:border-none"
           required
         />
         <p className="w-right-section">
@@ -83,7 +83,7 @@ function ApplicationForm() {
         id="donationCards"
         name="donationCards"
         placeholder="Напишіть ще варіанти, куди можна задонатити"
-        className="block border border-input rounded-3xl p-5.5 mb-7 w-5/12 h-80 min-h-[350px] max-h-[500px]"
+        className="block border border-input rounded-3xl p-5.5 mb-7 w-5/12 h-80 min-h-[350px] max-h-[500px] focus:outline-primary-300 focus:border-none"
       />
       <p className="my-5">Контакти</p>
       <input
@@ -93,7 +93,7 @@ function ApplicationForm() {
         name="phone"
         type="tel"
         placeholder="Номер телефону"
-        className="block px-5 py-2.5 mb-7 appearance-none border border-input rounded-3xl w-5/12"
+        className="block px-5 py-2.5 mb-7 appearance-none border border-input rounded-3xl w-5/12 focus:outline-primary-300 focus:border-none"
         required
       />
       <div className="flex">

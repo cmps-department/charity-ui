@@ -1,33 +1,50 @@
 import { useGetPostByIdQuery } from "../store/api/ApplicationApi";
 import { useParams } from "react-router-dom";
+import useUserInfo from "../hooks/useUserInfo";
 
 import Title from "../components/Title";
 import Carousel from "../components/Carousel";
-import Button from "../components/Button";
 import Mark from "../components/Mark";
-import Filters from "../components/Filters";
 import Applications from "../components/Applications";
+import Spinner from "../components/Spinner";
+
+import { findFilter } from "../filters/filters";
 
 import info from "../images/title/info.png";
 import mark from "../images/title/bookmark.png";
 
 const ApplicationPage = () => {
-  const {id} = useParams();
-  const { data, isLoading, isError, isSuccess } = useGetPostByIdQuery(id);
+  const { id } = useParams();
+  const { data, isLoading } = useGetPostByIdQuery(id);
+  const user = useUserInfo(data?.authorId);
 
+  if (isLoading || !data) {
+    return (
+      <Spinner />
+    )
+  }
 
-  console.log(data)
+  const category = findFilter(data?.category);
 
   return (
     <>
       <Title imageUrl={info} alt="info" title="Додаткова інформація" />
       <div className="flex mb-10 mt-10">
         <div className="w-1/2">
-          <Carousel className="z-0" />
+          <Carousel images={data?.images} />
         </div>
         <div className="w-1/2 mx-15">
           <div className="flex items-center gap-x-5">
-            <Button>Задонатити</Button>
+            <a
+              href={data?.donationLink}
+              target="_blank"
+              rel="noreferrer"
+              className="max-w-[300px] w-full box-border ease-in duration-200 
+                font-semibold uppercase 
+                bg-primary-100 text-center py-3 rounded-xl border-3 border-primary-100 hover:bg-transparent"
+            >
+              Задонатити
+            </a>
             <Mark>
               <img
                 className="mx-auto"
@@ -37,38 +54,34 @@ const ApplicationPage = () => {
               />
             </Mark>
           </div>
-          <h2 className="text-xl font-bold mb-4 mt-4">Володимир Андрєєв</h2>
+          <h2 className="text-xl font-bold mb-4 mt-4">{`${user?.firstName} ${user?.lastName}`}</h2>
           <p className="text-gray-700 text-base">
-            Відкриваємо збір на 5 пікапів для ССО, щоб хлопці ще вправніше та
-            мобільніше нищили ворога
+            {data?.fullDescription}
           </p>
           <h2 className="text-xl font-bold mb-4 mt-4">Реквізити та контакти</h2>
-          <h2 className="text-gray-700 text-base">Банка: 5375411205288033</h2>
-          <h2 className="text-gray-700 text-base">Приват: 5363542603051781 </h2>
-          <h2 className="text-gray-700 text-base mb-10">
-            PayPal: volodymyr.andreev@gmail.com
-          </h2>
+          <h2 className="text-gray-700 text-base">{data?.shortDescription}</h2>
           <h2 className="text-gray-700 text-base">
-            Пошта: volodymyr.andreev@gmail.com
+            <span>Пошта:</span> <a href={`mailto:${user?.email}`} className="hover:text-primary-300 hover:underline">{user?.email}</a>
           </h2>
           <h2 className="text-gray-700 text-base mb-10">
-            Телефон: +380 50 45 78 091
+            <span>Телефон:</span> <a href={`tel:${data?.phoneNumber}`} className="hover:text-primary-300 hover:underline">{data.phoneNumber}</a>
           </h2>
           <div className="text-center flex justify-between items-center mb-10">
             <p className="font-normal text-100">Кінцева сума:</p>
-            <p className="text-100 text-2xl font-semibold">1 000 000₴</p>
+            <p className="text-100 text-2xl font-semibold">{data?.targetAmount}₴</p>
           </div>
           <div className="text-center flex justify-between items-center mb-10">
+            {/* TODO - ДОДАТИ НА БЕКЕНДІ, ЩОБ ПРИ СТВОРЕННІ ПУБЛІКАЦІЇ ДОДАВАЛОСЬ ПОЛЕ ДАТИ ЇЇ СТВОРЕННЯ */}
             <p className="font-normal text-100">Дата публікації:</p>
             <p className="text-100 font-normal">29.04.2023</p>
           </div>
           <div className="text-center flex justify-between items-center mb-10">
             <p className="font-normal text-100">Категорія:</p>
-            <p className=" font-normal">Військовим</p>
+            <p className="font-normal text-primary-300">{category}</p>
           </div>
         </div>
       </div>
-      <Filters />
+      <div><span className="mr-3">Більше з категорії:</span> <span className="text-primary-300">{category}</span></div>
       <Applications />
     </>
   );

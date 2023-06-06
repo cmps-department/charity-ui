@@ -42,17 +42,17 @@ function Header() {
           {isAuthenticated ? (
             <button
               onClick={() => dispatch(toggleVisibility())}
-              className="font-bold uppercase flex items-center hover:text-primary-300"
+              className="font-extrabold uppercase flex items-center hover:text-primary-300"
             >
               Профіль
               <img alt="Профіль" src={user} className="w-6 h-6 ml-2" />
             </button>
           ) : (
-              <button className="font-bold uppercase hover:text-primary-300" onClick={login}>
+              <button className="font-extrabold uppercase hover:text-primary-300" onClick={login}>
                 Увійти
               </button>
           )}
-          <Button onClick={() => navigate("/createPost")}>
+          <Button onClick={() => navigate("createApplication")}>
             Створити оголошення
           </Button>
         </nav>

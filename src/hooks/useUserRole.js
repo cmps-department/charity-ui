@@ -14,7 +14,7 @@ function useUserRole() {
         } else {
             setIsAdmin(false)
         }
-    }, [auth])
+    }, [auth, user])
 
     return {auth, isAdmin }
 }

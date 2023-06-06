@@ -1,14 +1,14 @@
 import noticeboard from "../images/title/noticeboard.png";
 import plus from "../images/title/plus.png";
 import Title from "../components/Title";
-import MyCardList from "../components/MyCardList";
+import MyApplicationsList from "../components/MyApplicationsList";
 import { Link } from "react-router-dom";
 
-function MyPostsPage() {
+function MyApplicationsPage() {
   return (
     <>
       <Title imageUrl={noticeboard} alt="heart" title="Мої оголошення" />
-      <MyCardList />
+      <MyApplicationsList />
       <Link
         to={`/createPost`}
         className="max-w-[300px] bg-primary-400 border accent-200 rounded-3xl p-5 
@@ -23,4 +23,4 @@ function MyPostsPage() {
   );
 }
 
-export default MyPostsPage;
+export default MyApplicationsPage;

@@ -1,11 +1,10 @@
-import car from "../images/car.png";
 
-const MyCard = () => {
+
+const MyApplication = () => {
   return (
     <div className="max-w-[300px] bg-primary-400 border accent-200 rounded-3xl p-5 outline outline-3 outline-transparent outline-offset-[-3px] hover:outline-primary-100 ease-in duration-200 cursor-pointer">
       <div className="h-[256px] mb-[30px]">
         <img
-          src={car}
           alt="car"
           width={256}
           height={256}
@@ -38,4 +37,4 @@ const MyCard = () => {
   );
 };
 
-export default MyCard;
+export default MyApplication;

@@ -8,15 +8,12 @@ function useImageDownloader(imageId) {
     const [image, setImage] = useState();
 
     useEffect(() => {
-        if (!imageId || !user?.access_token) {
+        if (!imageId) {
             return;
         }
 
         apiInstance.get(`/images/${imageId}`, {
             responseType: "blob",
-            headers: {
-                "Authorization": `Bearer ${user.access_token}`
-            }
         }).then(response => {
             const url = URL.createObjectURL(response.data);
             setImage(url);

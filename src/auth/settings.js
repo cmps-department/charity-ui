@@ -1,3 +1,5 @@
+import { UserManager } from "oidc-client-ts"
+
 export const settings = {
   authority: process.env.REACT_APP_AUTHORITY,
   client_id: process.env.REACT_APP_CLIENT_ID,
@@ -10,5 +12,16 @@ export const settings = {
       document.title,
       window.location.pathname
     )
+  }
+}
+
+export const user = new UserManager(settings);
+
+export async function getToken() {
+  const userInfo = await user.getUser();
+  if (userInfo) {
+    return userInfo.access_token;
+  } else {
+    return "";
   }
 }

@@ -1,10 +1,10 @@
 import spinner from '../images/spinner.svg';
 
 
-function Spinner() {
+function Spinner({ width = 150, padding = 200 }) {
     return (
-        <div className='py-[200px] flex justify-center items-center'>
-            <img width={150}  src={spinner} alt="spinner" />
+        <div className={`py-[${padding}px] w-full flex justify-center items-center`}>
+            <img width={width}  src={spinner} alt="spinner" />
         </div>
     )
 }
